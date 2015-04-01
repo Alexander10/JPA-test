@@ -9,15 +9,16 @@ import javax.persistence.*;
  */
 @Entity
 public class Project {
+
 	@EmbeddedId
 	private ProjectId id;
 
 
-	@MapsId("dept")
+
 	@ManyToOne
 	@JoinColumns({
 		@JoinColumn(name ="DEPT_NUM", referencedColumnName = "NUM"),
-			@JoinColumn(name = "DEPT_CTRY", referencedColumnName = "CTRY")
+			@JoinColumn(name = "DEPT_CTRY", referencedColumnName = "CITY")
 	})
 	private Department department;
 

@@ -16,14 +16,14 @@ public class ProjectId implements Serializable {
 	@Column(name = "P_NAME")
 	private String name;
 
-	@Embedded
-	private DeptId dept;
+	@Column(name = "DEPT")
+	private String dept;
 
 	public ProjectId(){
 
 	}
 
-	public ProjectId(String name, DeptId dept) {
+	public ProjectId(String name, String dept) {
 		this.name = name;
 		this.dept = dept;
 	}
@@ -36,11 +36,11 @@ public class ProjectId implements Serializable {
 		this.name = name;
 	}
 
-	public DeptId getDept() {
+	public String getDept() {
 		return dept;
 	}
 
-	public void setDept(DeptId deptId) {
-		this.dept = deptId;
+	public void setDept(String dept) {
+		this.dept = dept;
 	}
 }

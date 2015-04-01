@@ -12,6 +12,8 @@ import java.util.List;
  */
 @Entity
 public class Department {
+
+
 	@EmbeddedId
 	private DeptId id;
 

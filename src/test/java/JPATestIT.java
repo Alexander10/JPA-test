@@ -122,7 +122,7 @@ public class JPATestIT {
 		em.persist(dept);
 		Project project = new Project();
 		project.setDepartment(dept);
-		project.setId(new ProjectId("CITy",deptId));
+		project.setId(new ProjectId("CITy","id"));
 		em.persist(project);
 
 

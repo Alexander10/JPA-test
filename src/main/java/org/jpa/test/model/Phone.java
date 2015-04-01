@@ -9,16 +9,6 @@ import java.util.Map;
  * Date: 16. 2. 2015
  * Time: 15:39
  */
-
-@Entity
-public class Address {
-	@Id private long id;
-	private String street;
-	private String city;
-	private String state;
-	private String zip;
-// ...
-}
 public class Phone {
 	@Id
 	private String id;

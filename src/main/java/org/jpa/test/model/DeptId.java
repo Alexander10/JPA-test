@@ -16,7 +16,7 @@ public class DeptId implements Serializable {
 	@Column(name = "NUM")
 	private int number;
 
-	@Column(name = "CTRY")
+	@Column(name = "CITY")
 	private String city;
 
 

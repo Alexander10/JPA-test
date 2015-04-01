@@ -1,6 +1,7 @@
 package org.jpa.test.model;
 
 import javax.persistence.*;
+import java.util.List;
 
 /**
  * User: ban
@@ -10,22 +11,23 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "Customer")
-@SecondaryTable(name = "EMP_ADDRESS", pkJoinColumns = @PrimaryKeyJoinColumn(name = "EMP_ID"))
 public class Customer {
 
 	@Id
-	@Column(name = "EMP_ID", table = "Customer")
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue
 	private Long id;
 
-	@Column(name = "name", table = "Customer")
+	@Column(name = "name")
 	private String name;
 
-	@Column(name = "street", table = "EMP_ADDRESS")
+	@Column(name = "street")
 	private String street;
 
-	@Column(name = "number", table = "EMP_ADDRESS")
+	@Column(name = "number")
 	private String number;
+
+	@OneToMany
+	private List<Address> addressList;
 
 
 	public Long getId() {
@@ -58,5 +60,13 @@ public class Customer {
 
 	public void setNumber(String number) {
 		this.number = number;
+	}
+
+	public List<Address> getAddressList() {
+		return addressList;
+	}
+
+	public void setAddressList(List<Address> addressList) {
+		this.addressList = addressList;
 	}
 }

@@ -9,25 +9,11 @@ import javax.persistence.*;
  */
 
 @Entity
-@IdClass(org.jpa.test.model.EmployeeId.class)
-@SqlResultSetMapping(
-		name ="EmployeWithAddress",
-		entities = {
-				@EntityResult(entityClass = Employee.class),
-				@EntityResult(entityClass = Address.class)
-		}
-)
 public class Employee {
-
-	public Employee() {
-
-	}
-
 
 	@Id
 	private int id;
 
-	@Id
 	private String country;
 
 	private String name;
